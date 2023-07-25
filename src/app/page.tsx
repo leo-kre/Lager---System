@@ -1,5 +1,6 @@
 "use client";
 
+import Item from "@/pages/api/components/Item";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -18,11 +19,11 @@ export default function Home() {
       let content: Array<any> = [];
 
       list.forEach((item: Item) => {
-            content.push(<h1>{item.name}</h1>);
+            content.push(<Item item={item}></Item>);
       });
 
       return (
-            <main className="min-h-screen">
+            <main className="min-h-screen bg-white">
                   <h1 className="text-red text-5xl">Home</h1>
                   {content}
             </main>
@@ -35,4 +36,5 @@ type Item = {
       layer: string;
       index: number;
       container: string;
+      count: number;
 };

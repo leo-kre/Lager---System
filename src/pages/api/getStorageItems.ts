@@ -7,6 +7,7 @@ const data: Array<Item> = [
             layer: "B",
             index: 3,
             container: "3",
+            count: 240,
       },
       {
             name: "Grill",
@@ -14,6 +15,15 @@ const data: Array<Item> = [
             layer: "A",
             index: 0,
             container: "4",
+            count: 1,
+      },
+      {
+            name: "Theke",
+            hall: "LF-Halle",
+            layer: "D",
+            index: 3,
+            container: "Rote Box",
+            count: 10,
       },
 ];
 
@@ -27,4 +37,5 @@ type Item = {
       layer: string;
       index: number;
       container: string;
+      count: number;
 };
