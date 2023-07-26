@@ -4,12 +4,22 @@ import layerSVG from "../../../../public/layer.svg";
 import countSVG from "../../../../public/count.svg";
 import containerSVG from "../../../../public/container.svg";
 
+import editSVG from "../../../../public/edit.svg";
+import Button from "./Button";
+
 export default function Item(props: ItemProps) {
       return (
-            <div className="w-fit my-5 max-w-[80%]">
-                  <div className="bg-red-500 w-full h-56 rounded-t-md"></div>
-                  <div className="bg-white h-fit px-3 py-3 rounded-b-md flex flex-col justify-center items-center">
-                        <h1 className="text-black text-5xl font-semibold pb-2 w-full text-left">{props.item.name}</h1>
+            <div className="my-5 max-w-[80%]">
+                  <div className="bg-white h-fit px-3 py-3 rounded-xl flex flex-col justify-center items-center">
+                        <div className="flex justify-between w-full items-center">
+                              <h1 className="text-black text-5xl font-semibold pb-2 w-full text-left">{props.item.name}</h1>
+                              <Button
+                                    src={editSVG}
+                                    action={() => {
+                                          alert("Edit");
+                                    }}
+                              ></Button>
+                        </div>
 
                         <div className="bg-white w-96 max-w-[99%] text-gray font-semibold text-2xl border-border border-2 rounded-md py-3 px-3 flex flex-col gap-1">
                               <div className="flex w-full justify-between gap-3 flex-col 0.5sm:flex-row">

@@ -1,6 +1,6 @@
 export default function SearchBar(props: SearchBarProps) {
       return (
-            <div className="bg-background w-fit rounded border-2 border-border">
+            <div className="bg-white w-fit rounded border-2 border-border">
                   <input
                         type="text"
                         placeholder="Suchen"

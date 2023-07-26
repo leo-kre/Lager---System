@@ -21,7 +21,7 @@ export default function Home() {
       let content: Array<any> = [];
 
       list.forEach((item: Item) => {
-            if (item.name.includes(searchInput)) content.push(<Item item={item}></Item>);
+            if (item.name.toLowerCase().includes(searchInput.toLowerCase())) content.push(<Item item={item}></Item>);
       });
 
       return (
