@@ -1,10 +1,12 @@
 "use client";
 
 import Item from "@/pages/api/components/Item";
+import SearchBar from "@/pages/api/components/Searchbar";
 import { useEffect, useState } from "react";
 
 export default function Home() {
       const [list, setList] = useState([]);
+      const [searchInput, setSearchInput] = useState("");
 
       useEffect(() => {
             const getData = async () => {
@@ -19,13 +21,18 @@ export default function Home() {
       let content: Array<any> = [];
 
       list.forEach((item: Item) => {
-            content.push(<Item item={item}></Item>);
+            if (item.name.includes(searchInput)) content.push(<Item item={item}></Item>);
       });
 
       return (
-            <main className="min-h-screen bg-white">
-                  <h1 className="text-red text-5xl">Home</h1>
-                  {content}
+            <main className="min-h-screen bg-background">
+                  <SearchBar
+                        action={(text: string) => {
+                              setSearchInput(text);
+                        }}
+                  ></SearchBar>
+
+                  <div className="grid 3xl:grid-cols-4 2.5xl:grid-cols-3 0.5xl:grid-cols-2 grid-cols-1 justify-items-center">{content}</div>
             </main>
       );
 }
