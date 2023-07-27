@@ -1,36 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-
-export const data: Array<Item> = [
-      {
-            uuid: "qzsq6-87jfb-zwt9f-dxc1i-uexwz",
-            name: "Feldbett",
-            hall: "MTF-Halle",
-            layer: "B",
-            index: 3,
-            container: "Box 1",
-            count: 240,
-      },
-      {
-            uuid: "null",
-            name: "Grill",
-            hall: "MTF-Halle",
-            layer: "A",
-            index: 0,
-            container: "4",
-            count: 1,
-      },
-      {
-            uuid: "null",
-            name: "Theke",
-            hall: "LF-Halle",
-            layer: "D",
-            index: 3,
-            container: "Rote Box",
-            count: 10,
-      },
-];
+import { data, load } from "./database";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
+      if (data.length == 0) {
+            load();
+      }
+
       data.forEach((item: Item) => {
             if (item.uuid == "null") {
                   item.uuid = generateUUID();
@@ -45,7 +20,6 @@ type Item = {
       name: string;
       hall: string;
       layer: string;
-      index: number;
       container: string;
       count: number;
 };

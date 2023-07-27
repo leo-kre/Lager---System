@@ -1,10 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { data } from "./getStorageItems";
+import { data, load } from ".//database";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
       const uuid = req.query.uuid;
 
-      console.log(uuid);
+      if (data.length == 0) {
+            load();
+      }
 
       data.forEach((item) => {
             if (item.uuid == uuid) {
@@ -13,13 +15,3 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             }
       });
 }
-
-type Item = {
-      uuid: string;
-      name: string;
-      hall: string;
-      layer: string;
-      index: number;
-      container: string;
-      count: number;
-};

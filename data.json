@@ -1,0 +1,42 @@
+[
+        {
+                "uuid": "m2kbv-ecf70-qt0ah-imv4l-jx471",
+                "name": "name",
+                "hall": "Dachboden",
+                "layer": "D-4",
+                "container": "Gitterkiste",
+                "count": 12
+        },
+        {
+                "uuid": "rou7s-itf4o-3fpqk-alqns-i43l9",
+                "name": "name",
+                "hall": "Dachboden",
+                "layer": "D-4",
+                "container": "Gitterkiste",
+                "count": 12
+        },
+        {
+                "uuid": "null",
+                "name": "name",
+                "hall": "Dachboden",
+                "layer": "D-4",
+                "container": "Gitterkiste",
+                "count": 12
+        },
+        {
+                "uuid": "null",
+                "name": "name",
+                "hall": "Dachboden",
+                "layer": "D-4",
+                "container": "Gitterkiste",
+                "count": 12
+        },
+        {
+                "uuid": "null",
+                "name": "name",
+                "hall": "Dachboden",
+                "layer": "D-4",
+                "container": "Gitterkiste",
+                "count": 12
+        }
+]

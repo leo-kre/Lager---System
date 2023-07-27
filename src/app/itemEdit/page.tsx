@@ -1,5 +1,5 @@
 "use client";
-import Item from "@/pages/api/components/Item";
+import Item from "@/pages/api/components/Card";
 import RadioButton from "@/pages/api/components/RadioButton";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -53,7 +53,6 @@ type Item = {
       name: string;
       hall: string;
       layer: string;
-      index: number;
       container: string;
       count: number;
 };
