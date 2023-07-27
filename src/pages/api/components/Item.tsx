@@ -6,8 +6,11 @@ import containerSVG from "../../../../public/container.svg";
 
 import editSVG from "../../../../public/edit.svg";
 import Button from "./Button";
+import { useRouter } from "next/navigation";
 
 export default function Item(props: ItemProps) {
+      const router = useRouter();
+
       return (
             <div className="my-5 max-w-[80%]">
                   <div className="bg-white h-fit px-3 py-3 rounded-xl flex flex-col justify-center items-center">
@@ -16,8 +19,9 @@ export default function Item(props: ItemProps) {
                               <Button
                                     src={editSVG}
                                     action={() => {
-                                          alert("Edit");
+                                          router.replace("/itemEdit?uuid=" + props.item.uuid);
                                     }}
+                                    uuid={props.item.uuid}
                               ></Button>
                         </div>
 
@@ -64,6 +68,7 @@ type ItemProps = {
 };
 
 type Item = {
+      uuid: string;
       name: string;
       hall: string;
       layer: string;

@@ -38,6 +38,7 @@ export default function Home() {
 }
 
 type Item = {
+      uuid: string;
       name: string;
       hall: string;
       layer: string;

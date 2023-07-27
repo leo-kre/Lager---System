@@ -16,4 +16,5 @@ export default function Button(props: ButtonProps) {
 type ButtonProps = {
       src: HTMLImageElement;
       action: Function;
+      uuid: string;
 };

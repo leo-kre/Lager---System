@@ -1,13 +1,16 @@
+import { useState } from "react";
+
 export default function SearchBar(props: SearchBarProps) {
+      const [value, setValue] = useState("");
+      props.action(value);
       return (
-            <div className="bg-white w-fit rounded border-2 border-border">
+            <div className="bg-white w-fit rounded-xl border-2 border-gray">
                   <input
-                        type="text"
                         placeholder="Suchen"
-                        className="text-2xl px-1 bg-transparent text-black"
+                        className="text-2xl px-1 pl-2 bg-transparent text-black"
                         onInput={(obj) => {
                               let o: any = obj as any;
-                              props.action(o.target.value);
+                              setValue(o.target.value);
                         }}
                   ></input>
             </div>
