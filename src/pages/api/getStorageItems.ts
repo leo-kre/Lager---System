@@ -24,7 +24,7 @@ type Item = {
       count: number;
 };
 
-function generateUUID(): string {
+export function generateUUID(): string {
       const charString = "abcdefghijklmnopqrstuvwxyz0123456789";
       const length = charString.length;
 

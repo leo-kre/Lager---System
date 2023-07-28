@@ -49,7 +49,7 @@ export default function Home() {
                               }}
                         ></SearchBar>
 
-                        <Link className="h-10 w-10 rounded-full bg-blue hover:bg-darkBlue transition duration-100 ease-in-out flex justify-center items-center" href={"/addItem"}>
+                        <Link className="h-10 w-10 rounded-full bg-blue hover:bg-darkBlue transition duration-100 ease-in-out flex justify-center items-center rotate-45 hover:rotate-90" href={"/addItem"}>
                               <div className="bg-white h-1 w-5 rounded-xl"></div>
                               <div className="bg-white h-1 w-5 rotate-90 absolute rounded-xl"></div>
                         </Link>

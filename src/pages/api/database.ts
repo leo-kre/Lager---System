@@ -1,12 +1,18 @@
 const fs = require("fs");
 
 const jsonFile = "./data.json";
+const configFile = "./config.json";
 
 export let data: Array<Item> = [];
+
+export let config: Config;
 
 export function load() {
       const dataString = fs.readFileSync(jsonFile, "utf8");
       data = JSON.parse(dataString);
+
+      const configString = fs.readFileSync(configFile, "utf8");
+      config = JSON.parse(configString);
 }
 
 export function save() {
@@ -26,4 +32,9 @@ type Item = {
       layer: string;
       container: string;
       count: number;
+};
+
+type Config = {
+      halls: Array<string>;
+      layers: Array<string>;
 };

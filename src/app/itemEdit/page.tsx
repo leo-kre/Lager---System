@@ -34,8 +34,6 @@ export default function ItemEdit() {
 
       let radioButtons: Array<any> = [];
 
-      console.log(selectedHall);
-
       halls.forEach((hall) => {
             radioButtons.push(<RadioButton text={hall} action={(text: string) => setSelectedHall(text)} currentSelectedButton={selectedHall}></RadioButton>);
       });

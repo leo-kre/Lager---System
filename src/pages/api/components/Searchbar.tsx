@@ -11,7 +11,7 @@ export default function SearchBar(props: SearchBarProps) {
                         placeholder="Suchen"
                         className="max-w-[80vw] p-1 text-3xl text-left bg-transparent text-white select-none focus:outline-none placeholder-text_2"
                         onInput={(obj) => {
-                              let o: any = obj as any;
+                              const o: any = obj as any;
                               setValue(o.target.value);
                         }}
                   ></input>

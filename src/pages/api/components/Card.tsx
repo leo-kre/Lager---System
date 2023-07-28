@@ -1,5 +1,4 @@
 import Image from "next/image";
-import hallSVG from "../../../../public/hall.svg";
 import layerSVG from "../../../../public/layer.svg";
 import countSVG from "../../../../public/count.svg";
 import containerSVG from "../../../../public/container.svg";
@@ -11,6 +10,8 @@ import { useRouter } from "next/navigation";
 export default function Item(props: ItemProps) {
       const router = useRouter();
 
+      console.log(props.item);
+
       /*
                                     <Button
                                     src={editSVG}
@@ -21,18 +22,20 @@ export default function Item(props: ItemProps) {
                               ></Button> */
 
       return (
-            <div className="my-5 h-fit max-w-[80%] w-80 border border-border bg-card rounded-2xl flex flex-col">
-                  <div className="flex justify-between w-full items-center bg-background_light rounded-t-2xl p-2">
-                        <h1 className="text-text_1 text-5xl pb-2 w-full text-left">{props.item.name}</h1>
-                        <Button
-                              src={editSVG}
-                              action={() => {
-                                    router.replace("/itemEdit?uuid=" + props.item.uuid);
-                              }}
-                              uuid={props.item.uuid}
-                        ></Button>
+            <div className="m-5 h-fit border border-border bg-card rounded-2xl flex flex-col">
+                  <div className="flex justify-between items-center bg-background_light rounded-t-2xl p-2">
+                        <h1 className="text-text_1 text-4xl md:text-5xl pb-2 w-full text-left">{props.item.name}</h1>
+                        <div className="w-10 h-10">
+                              <Button
+                                    src={editSVG}
+                                    action={() => {
+                                          router.replace("/itemEdit?uuid=" + props.item.uuid);
+                                    }}
+                                    uuid={props.item.uuid}
+                              ></Button>
+                        </div>
                   </div>
-                  <div className="m-3">
+                  <div className="m-3 ">
                         <div className="flex justify-between mb-2">
                               <div className="flex items-center">
                                     <Image src={layerSVG} alt="layer icon" className="w-8"></Image>
